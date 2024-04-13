@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Espoir Loém | QR code component</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --white: hsl(0, 0%, 100%);
+        --Light-gray: hsl(212, 45%, 89%);
+        --Grayish-blue: hsl(220, 15%, 55%);
+        --Dark-blue: hsl(218, 44%, 22%);
+        --font-regular: 400;
+        --Font-Bold: 700;
+        --radius: 10px;
+        --radius-lg: calc(var(--radius) * 2);
+      }
+      p {
+        font-size: 15px;
+        font-weight: var(--font-regular);
+        color: var(--Grayish-blue);
+        padding: 0 12px;
+      }
+      h1 {
+        font-size: 22px;
+        font-weight: var(--Font-Bold);
+        color: var(--Dark-blue);
+        padding: 0 8px;
+      }
+      .App {
+        height: 100dvh;
+        width: 100dvw;
+        display: grid;
+        place-content: center;
+        background-color: var(--Light-gray);
+        text-align: center;
+        font-family: "Outfit", sans-serif;
+        /* children */
+        & .card {
+          height: 497px;
+          width: 320px;
+          border-radius: var(--radius-lg);
+          background-color: var(--white);
+          display: flex;
+          flex-direction: column;
+          /* justify-content: center; */
+          /* align-items: center; */
+          gap: 24px;
+          padding: 16px;
+
+          /* children */
+          & img {
+            object-fit: cover;
+            --size: 288px;
+            width: var(--size);
+            height: var(--size);
+            border-radius: var(--radius);
+          }
+          & .text {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="App">
+      <article class="card">
+        <figure class="qr-img">
+          <img src="./images/image-qr-code.png" alt="" />
+        </figure>
+        <div class="text">
+          <h1>Improve your front-end skills by building projects</h1>
+          <p>
+            Scan the QR code to visit Frontend Mentor and take your coding
+            skills to the next level
+          </p>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>
